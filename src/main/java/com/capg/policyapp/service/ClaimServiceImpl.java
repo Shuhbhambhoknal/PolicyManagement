@@ -12,8 +12,13 @@ import com.capg.policyapp.model.Claim;
 @Service
 public class ClaimServiceImpl implements ClaimService {
 
+
+	private final ClaimDAOImpl claimDAOImpl;
+
 	@Autowired
-	ClaimDAOImpl claimDAOImpl;
+	public ClaimServiceImpl(ClaimDAOImpl claimDAOImpl){
+		this.claimDAOImpl=claimDAOImpl;
+	}
 
 	@Override
 	public Claim addClaim(Claim claimObj, long policyId) throws InvalidEntityException {
