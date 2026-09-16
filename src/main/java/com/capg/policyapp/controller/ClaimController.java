@@ -31,7 +31,7 @@ public class ClaimController {
 	@PostMapping("/addClaims/{policyId}")
 	public ResponseEntity<Claim> addClaim(@RequestBody @Valid Claim claimObj, @PathVariable long policyId) throws InvalidEntityException {
 		Claim addedClaim = claimService.addClaim(claimObj, policyId);
-		return new ResponseEntity<>(addedClaim, HttpStatus.CREATED);
+		return new ResponseEntity<>(addedClaim, HttpStatus.OK);
 	}
 	
 	@PutMapping("/updateClaimStatus/{claimId}/{claimStatus}")
